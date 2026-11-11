@@ -1,0 +1,1241 @@
+:root {
+    --obsidian: #0d0c0b;
+    --charcoal: #161412;
+    --gold: #c6a467;
+    --gold-light: #dfbe82;
+    --cream: #f6f3ee;
+    --paper: #ffffff;
+    --ink: #1e1c1a;
+    --ink-muted: #5c5751;
+    --border-light: #e5dfd5;
+    --border-dark: rgba(198, 164, 103, 0.22);
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background-color: var(--paper);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* Header & Navegação — Arquitetura Búfalo Branco */
+.site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #000000;
+    padding: 20px 0 22px;
+}
+
+.header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 64px;
+}
+
+.brand-stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #c5a86a;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.brand-script {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #c5a86a;
+    letter-spacing: 0.3px;
+}
+
+.brand-sub {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 4.5px;
+    color: #c5a86a;
+    margin-top: 4px;
+}
+
+.brand-since {
+    font-size: 0.52rem;
+    letter-spacing: 1.5px;
+    color: #c5a86a;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 6px;
+}
+
+.nav-link {
+    color: #c5a86a;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: auto;
+}
+
+.nav-toggle span {
+    width: 26px;
+    height: 1.5px;
+    background: #c5a86a;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 94vh;
+    background: url('banner-picanha.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13,12,11,0.72) 0%, rgba(13,12,11,0.55) 50%, rgba(13,12,11,0.88) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.08;
+    margin-bottom: 22px;
+}
+
+.hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold-light);
+}
+
+.hero-lead {
+    font-size: 1.08rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 38px;
+    font-weight: 300;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--obsidian);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 34px;
+    transition: background 0.25s ease;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+}
+
+.btn-ghost {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 34px;
+    transition: all 0.25s ease;
+}
+
+.btn-ghost:hover {
+    border-color: var(--paper);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-scroll span {
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.scroll-line {
+    width: 1px;
+    height: 32px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+/* Seção Editorial A Casa */
+.editorial-section {
+    padding: 110px 0;
+    background: var(--paper);
+}
+
+.editorial-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+}
+
+.editorial-media {
+    position: relative;
+}
+
+.editorial-media img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+.media-caption {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+.editorial-card {
+    background: var(--cream);
+    padding: 64px 56px;
+    margin-left: -64px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #8f723e;
+    margin-bottom: 14px;
+}
+
+.section-tag.gold {
+    color: var(--gold);
+}
+
+.editorial-card h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 22px;
+    color: var(--obsidian);
+}
+
+.editorial-card p {
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+    font-size: 0.98rem;
+}
+
+.editorial-metrics {
+    display: flex;
+    gap: 48px;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border-light);
+}
+
+.editorial-metrics strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--obsidian);
+    line-height: 1;
+}
+
+.editorial-metrics span {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.5px;
+}
+
+/* Seção Carta de Cortes Interativa */
+.dark-menu-section {
+    background: #121110;
+    color: var(--paper);
+    padding: 110px 0;
+}
+
+.menu-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 45px;
+}
+
+.menu-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.menu-header p {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 300;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid rgba(198, 164, 103, 0.35);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 12px 26px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+    border-color: var(--gold);
+    color: var(--paper);
+}
+
+.tab-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--obsidian);
+}
+
+.menu-showcase {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.menu-panel {
+    display: none;
+    animation: fadeIn 0.35s ease;
+}
+
+.menu-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dish-item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dish-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.dish-head h4 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge-gold {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--obsidian);
+    background: var(--gold);
+    padding: 3px 8px;
+}
+
+.dish-dots {
+    flex-grow: 1;
+    border-bottom: 1px dotted rgba(198, 164, 103, 0.35);
+}
+
+.dish-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.dish-item p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+/* Moldura Editorial de Alto Padrão (Steakhouse) */
+.menu-frame {
+    position: relative;
+    background: #141311;
+    border: 1px solid rgba(198, 164, 103, 0.35);
+    padding: 0;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.65);
+    overflow: hidden;
+}
+
+/* Linha dourada interna sobreposta à fotografia */
+.menu-frame::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(198, 164, 103, 0.28);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.menu-frame img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: contrast(1.06) brightness(0.95);
+    transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.menu-frame:hover img {
+    transform: scale(1.04);
+}
+
+.frame-caption {
+    position: relative;
+    z-index: 3;
+    padding: 26px 28px 28px;
+    background: linear-gradient(180deg, #181614 0%, #0f0e0d 100%);
+    border-top: 1px solid rgba(198, 164, 103, 0.25);
+}
+
+.frame-caption span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.frame-caption span::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background-color: var(--gold);
+}
+
+.frame-caption p {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.45;
+}
+
+/* Grade Editorial de 3 Artigos */
+.articles-section {
+    padding: 90px 0;
+    background-color: var(--paper);
+}
+
+.articles-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.articles-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--obsidian);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+.articles-grid .menu-frame {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.articles-grid .frame-caption {
+    flex-grow: 1;
+}
+
+.articles-grid .frame-caption h3 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    color: var(--paper);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+@media (max-width: 960px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Seção Jantinha Completa */
+.jantinha-section {
+    padding: 110px 0;
+    background: var(--paper);
+}
+
+.jantinha-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.jantinha-info h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    line-height: 1.12;
+    margin-bottom: 20px;
+}
+
+.jantinha-desc {
+    color: var(--ink-muted);
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+.jantinha-price-box {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 18px;
+    padding: 16px 26px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    margin-bottom: 32px;
+}
+
+.price-label {
+    font-size: 0.72rem;
+font-weight: 600;
+letter-spacing: 2px;
+color: var(--ink-muted);
+}
+.price-value {
+font-family: var(--font-serif);
+font-size: 2rem;
+font-weight: 700;
+color: var(--obsidian);
+}
+.btn-dark {
+display: inline-block;
+background: var(--obsidian);
+color: var(--gold);
+border: 1px solid var(--obsidian);
+text-decoration: none;
+font-size: 0.78rem;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 2px;
+padding: 16px 32px;
+cursor: pointer;
+transition: all 0.25s ease;
+}
+.btn-dark:hover {
+background: var(--gold);
+color: var(--obsidian);
+border-color: var(--gold);
+}
+.jantinha-visual img {
+width: 100%;
+height: 460px;
+object-fit: cover;
+display: block;
+}
+/* Faixa CTA Reserva */
+.banner-cta {
+position: relative;
+padding: 96px 0;
+background: url('banner-picanha.jpg') center center / cover fixed no-repeat;
+text-align: center;
+color: var(--paper);
+}
+.banner-cta-overlay {
+position: absolute;
+inset: 0;
+background: rgba(13, 12, 11, 0.82);
+}
+.banner-cta-inner {
+position: relative;
+z-index: 2;
+max-width: 720px;
+}
+.banner-cta h2 {
+font-family: var(--font-serif);
+font-size: clamp(2rem, 4vw, 3rem);
+margin-bottom: 32px;
+line-height: 1.15;
+}
+/* Contato & Localização */
+/* Contato & Localização */
+.contact-section {
+    padding: 100px 0;
+    background-color: var(--cream);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--obsidian);
+    margin-bottom: 32px;
+    line-height: 1.1;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.info-block {
+    margin-bottom: 24px;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #8f723e;
+    margin-bottom: 6px;
+}
+
+.info-block p {
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+.wpp-clean-link {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--obsidian);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 3px;
+    transition: color 0.2s ease;
+}
+
+.wpp-clean-link:hover {
+    color: #8f723e;
+}
+
+/* Cartão do Mapa 100% Ajustado */
+.map-card {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 220px;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.map-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.map-card:hover img {
+    transform: scale(1.03);
+}
+
+.map-btn {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background-color: var(--obsidian);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 16px;
+}
+
+/* Caixa do Formulário */
+.contact-box {
+    background-color: var(--paper);
+    padding: 48px;
+    border: 1px solid var(--border-light);
+}
+
+.contact-box h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--obsidian);
+    margin-bottom: 8px;
+}
+
+.contact-box p {
+    font-size: 0.92rem;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+}
+
+.clean-form .input-group-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.clean-form input,
+.clean-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-light);
+    background-color: #fcfbf9;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--ink);
+}
+
+.clean-form input:focus,
+.clean-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .info-grid,
+    .clean-form .input-group-row {
+        grid-template-columns: 1fr;
+    }
+    .contact-box {
+        padding: 32px 24px;
+    }
+}
+
+.map-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    line-height: 0;
+}
+
+.map-box img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.map-overlay-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--obsidian);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 14px;
+    line-height: 1.2;
+    transition: all 0.25s ease;
+}
+
+.map-box:hover .map-overlay-btn {
+    background: var(--gold);
+    color: var(--obsidian);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--obsidian);
+    color: rgba(255, 255, 255, 0.65);
+    padding: 48px 0;
+    border-top: 1px solid var(--border-dark);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-brand strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.footer-brand span {
+    font-size: 0.8rem;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+}
+
+/* Botão Flutuante WhatsApp Sofisticado */
+.floating-wpp {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #1b8a4b 0%, #146c3a 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(198, 164, 103, 0.25);
+    z-index: 999;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.floating-wpp svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.floating-wpp:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, #219e57 0%, #187d44 100%);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45), 0 0 16px rgba(31, 157, 85, 0.4);
+}
+
+.floating-wpp:hover svg {
+    transform: scale(1.12);
+}
+
+@media (max-width: 600px) {
+    .floating-wpp {
+        bottom: 18px;
+        right: 18px;
+        padding: 12px 18px;
+        font-size: 0.72rem;
+    }
+}
+
+
+/* =========================================
+   ADAPTAÇÃO COMPLETA PARA MOBILE E TABLET
+   ========================================= */
+
+@media (max-width: 960px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    /* Cabeçalho Mobile com Menu Gaveta */
+    .site-header {
+        padding: 14px 0;
+    }
+
+    .header-inner {
+        padding: 0 24px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .brand-script {
+        font-size: 1.35rem;
+    }
+
+    .brand-sub {
+        font-size: 0.6rem;
+        letter-spacing: 3.5px;
+    }
+
+    .nav-toggle {
+        display: flex;
+        padding: 8px;
+        z-index: 1002;
+    }
+
+    .site-nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: #0d0c0b;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 40px 32px;
+        gap: 24px;
+        border-left: 1px solid rgba(198, 164, 103, 0.3);
+        box-shadow: -15px 0 35px rgba(0, 0, 0, 0.8);
+        transition: right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 1001;
+    }
+
+    .site-nav.open {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Hero Banner Mobile */
+    .hero {
+        min-height: 85vh;
+        padding: 100px 20px 60px;
+        background-attachment: scroll;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+    }
+
+    .hero-lead {
+        font-size: 0.98rem;
+        margin-bottom: 30px;
+    }
+
+    /* Espaçamento Vertical das Seções */
+    .editorial-section,
+    .dark-menu-section,
+    .jantinha-section,
+    .articles-section,
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    /* Seção A Casa Empilhada */
+    .editorial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-media img {
+        height: 320px;
+    }
+
+    .editorial-card {
+        margin-left: 0;
+        padding: 36px 24px;
+    }
+
+    .editorial-card h2 {
+        font-size: 1.95rem;
+    }
+
+    .editorial-metrics {
+        gap: 32px;
+    }
+
+    /* Cardápio Interativo no Celular */
+    .menu-header h2 {
+        font-size: 2.1rem;
+    }
+
+    .menu-showcase {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    /* Coloca a foto selecionada ACIMA da lista no celular para o cliente ver na hora */
+    .menu-frame {
+        order: -1;
+        max-width: 100%;
+    }
+
+    .menu-frame img {
+        height: 240px;
+    }
+
+    /* Jantinha Completa */
+    .jantinha-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .jantinha-info h2 {
+        font-size: 2.2rem;
+    }
+
+    .jantinha-visual img {
+        height: 300px;
+    }
+
+    /* Grade de 3 Artigos */
+    .articles-header h2 {
+        font-size: 2rem;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    /* Faixa CTA (Remove fixed background que trava no iOS/Android) */
+    .banner-cta {
+        padding: 72px 0;
+        background-attachment: scroll;
+    }
+
+    /* Contato e Localização */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info h2 {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 18px;
+    }
+
+    /* Botões do Hero em largura total */
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-gold,
+    .btn-ghost {
+        width: 100%;
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    /* Abas do Cardápio deslizáveis horizontalmente no dedo */
+    .menu-tabs {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-bottom: 32px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+        flex-shrink: 0;
+        padding: 10px 18px;
+        font-size: 0.7rem;
+    }
+
+    /* Itens do Cardápio sem quebrar linha */
+    .dish-head {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .dish-head h4 {
+        font-size: 1.15rem;
+    }
+
+    .dish-dots {
+        display: none;
+    }
+
+    /* Preço e Botão da Jantinha */
+    .jantinha-price-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .jantinha-info .btn-dark {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Informações e Formulário de Contato */
+    .info-grid,
+    .clean-form .input-group-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-box {
+        padding: 28px 20px;
+    }
+
+    .map-card {
+        height: 190px;
+    }
+
+    /* Rodapé Centralizado */
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    /* Botão Flutuante WhatsApp compacto no celular */
+    .floating-wpp {
+        bottom: 16px;
+        right: 16px;
+        padding: 12px 18px;
+        font-size: 0.72rem;
+    }
+}
+
